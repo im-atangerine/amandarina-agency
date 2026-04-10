@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amandarina Agency — Marketing Estratégico</title>
+    <meta name="description" content="Amandarina Agency — Estrategia de marca, auditoría de negocio y contenido para solopreneurs, marcas personales, PyMEs y startups.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           🍊 AMANDARINA — GUÍA DE PERSONALIZACIÓN
+           ============================================
+           Para cambiar colores, tipografía o espaciado,
+           solo editá las variables de abajo.
+           No necesitás tocar nada más del CSS.
+           ============================================ */
+        :root {
+            /* --- COLORES PRINCIPALES --- */
+            --color-bg:         #FFFBF5;       /* Fondo general (crema cálido) */
+            --color-text:       #2D2A26;       /* Texto principal (marrón oscuro) */
+            --color-text-soft:  #6B6560;       /* Texto secundario */
+            --color-accent:     #E8742A;       /* Naranja Amandarina — tu color estrella */
+            --color-accent-soft:#FFF0E5;       /* Naranja suave para fondos */
+            --color-accent-dark:#C45D1A;       /* Naranja oscuro para hover */
+            --color-dark:       #1A1714;       /* Fondo oscuro (hero, footer) */
+            --color-dark-text:  #F5F0EB;       /* Texto sobre fondo oscuro */
+            --color-border:     #E8E2DA;       /* Bordes y separadores */
+            --color-card-bg:    #FFFFFF;       /* Fondo de tarjetas */
+
+            /* --- TIPOGRAFÍA --- */
+            --font-heading: 'DM Serif Display', Georgia, serif;
+            --font-body:    'DM Sans', system-ui, sans-serif;
+
+            /* --- ESPACIADO — */
+            --section-padding: 6rem 2rem;
+            --max-width: 1100px;
+            --radius: 12px;
+        }
+
+        /* ============================================
+           RESET & BASE
+           ============================================ */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background: var(--color-bg);
+            line-height: 1.7;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img { max-width: 100%; display: block; }
+        a { color: var(--color-accent); text-decoration: none; transition: color 0.3s; }
+        a:hover { color: var(--color-accent-dark); }
+
+        .container { max-width: var(--max-width); margin: 0 auto; }
+
+        /* ============================================
+           ANIMACIONES DE ENTRADA
+           ============================================ */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+        .animate-up {
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+        }
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.25s; }
+        .delay-3 { animation-delay: 0.4s; }
+        .delay-4 { animation-delay: 0.55s; }
+
+        /* ============================================
+           NAVEGACIÓN
+           ============================================ */
+        .nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(255, 251, 245, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--color-border);
+            transition: box-shadow 0.3s;
+        }
+        .nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-logo {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            color: var(--color-text);
+            letter-spacing: -0.02em;
+        }
+        .nav-logo span { color: var(--color-accent); }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a {
+            color: var(--color-text-soft);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--color-accent); }
+
+        /* Mobile hamburger */
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+        .nav-toggle span {
+            display: block; width: 24px; height: 2px;
+            background: var(--color-text); margin: 5px 0;
+            transition: all 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle { display: block; }
+            .nav-links {
+                position: fixed; top: 0; right: -100%;
+                width: 70%; height: 100vh;
+                background: var(--color-bg);
+                flex-direction: column;
+                padding: 5rem 2rem;
+                gap: 1.5rem;
+                transition: right 0.4s ease;
+                box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+            }
+            .nav-links.open { right: 0; }
+            .nav-links a { font-size: 1.1rem; }
+        }
+
+        /* ============================================
+           HERO
+           ============================================ */
+        .hero {
+            background: var(--color-dark);
+            color: var(--color-dark-text);
+            padding: 10rem 2rem 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%; right: -20%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(232, 116, 42, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .hero-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            position: relative;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+            padding: 0.4rem 1rem;
+            border: 1px solid rgba(232, 116, 42, 0.3);
+            border-radius: 50px;
+        }
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 6vw, 4.2rem);
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            max-width: 700px;
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: var(--color-accent);
+        }
+        .hero-sub {
+            font-size: 1.15rem;
+            color: rgba(245, 240, 235, 0.7);
+            max-width: 550px;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.2rem;
+            background: var(--color-accent);
+            color: #fff;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 0.02em;
+        }
+        .btn:hover {
+            background: var(--color-accent-dark);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(232, 116, 42, 0.3);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--color-accent);
+            color: var(--color-accent);
+            margin-left: 1rem;
+        }
+        .btn-outline:hover {
+            background: var(--color-accent);
+            color: #fff;
+        }
+
+        /* ============================================
+           SECCIÓN: SOBRE MÍ
+           ============================================ */
+        .about { padding: var(--section-padding); }
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 0.75rem;
+        }
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .about-image {
+            aspect-ratio: 4/5;
+            background: var(--color-accent-soft);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: var(--color-text-soft);
+            border: 2px dashed var(--color-border);
+            text-align: center;
+            padding: 2rem;
+        }
+        .about-text p {
+            color: var(--color-text-soft);
+            margin-bottom: 1.25rem;
+            font-size: 1.05rem;
+        }
+        .about-text strong { color: var(--color-text); }
+        .about-highlight {
+            display: inline-block;
+            background: var(--color-accent-soft);
+            color: var(--color-accent-dark);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        /* ============================================
+           SECCIÓN: SERVICIOS
+           ============================================ */
+        .services {
+            padding: var(--section-padding);
+            background: var(--color-accent-soft);
+        }
+        .services-header { text-align: center; margin-bottom: 3.5rem; }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .service-card {
+            background: var(--color-card-bg);
+            border-radius: var(--radius);
+            padding: 2.5rem 2rem;
+            border: 1px solid var(--color-border);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: var(--color-accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+        }
+        .service-icon {
+            width: 50px; height: 50px;
+            background: var(--color-accent-soft);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .service-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+        }
+        .service-card p {
+            color: var(--color-text-soft);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ============================================
+           SECCIÓN: PROYECTOS / PORTFOLIO
+           ============================================ */
+        .projects { padding: var(--section-padding); }
+        .projects-header { text-align: center; margin-bottom: 3.5rem; }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        .project-card {
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+        }
+        .project-image {
+            aspect-ratio: 16/10;
+            background: linear-gradient(135deg, var(--color-accent-soft), rgba(232, 116, 42, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: var(--color-text-soft);
+            text-align: center;
+            padding: 1rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .project-content { padding: 2rem; }
+        .project-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            background: var(--color-accent-soft);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            margin-bottom: 0.75rem;
+        }
+        .project-content h3 {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        .project-content p {
+            color: var(--color-text-soft);
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+        .project-metrics {
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--color-border);
+            font-size: 0.85rem;
+            color: var(--color-text-soft);
+            font-style: italic;
+        }
+        .project-metrics span {
+            color: var(--color-accent);
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ============================================
+           SECCIÓN: PROCESO
+           ============================================ */
+        .process {
+            padding: var(--section-padding);
+            background: var(--color-dark);
+            color: var(--color-dark-text);
+        }
+        .process-header { text-align: center; margin-bottom: 3.5rem; }
+        .process-header .section-title { color: var(--color-dark-text); }
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        .process-step { text-align: center; }
+        .step-number {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            color: var(--color-accent);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        .process-step h3 {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+        }
+        .process-step p {
+            color: rgba(245, 240, 235, 0.6);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .process-steps { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 480px) {
+            .process-steps { grid-template-columns: 1fr; }
+        }
+
+        /* ============================================
+           SECCIÓN: TESTIMONIOS
+           ============================================ */
+        .testimonials { padding: var(--section-padding); }
+        .testimonials-header { text-align: center; margin-bottom: 3.5rem; }
+        .testimonial-card {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 3rem;
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+        }
+        .testimonial-quote {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            color: var(--color-text);
+        }
+        .testimonial-quote::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--color-accent);
+            line-height: 0;
+            vertical-align: -0.6em;
+            margin-right: 0.1em;
+        }
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--color-text);
+        }
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: var(--color-text-soft);
+        }
+
+        /* ============================================
+           SECCIÓN: CONTACTO / CTA
+           ============================================ */
+        .contact {
+            padding: var(--section-padding);
+            background: var(--color-accent-soft);
+        }
+        .contact-inner {
+            max-width: 650px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .contact-inner .section-title { margin-bottom: 1rem; }
+        .contact-inner p {
+            color: var(--color-text-soft);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+        }
+        .contact-methods {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-text-soft);
+            font-size: 0.95rem;
+        }
+        .contact-method span { font-size: 1.2rem; }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer {
+            background: var(--color-dark);
+            color: rgba(245, 240, 235, 0.5);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+        .footer a { color: var(--color-accent); }
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 1rem;
+            list-style: none;
+        }
+
+        /* ============================================
+           UTILIDADES
+           ============================================ */
+        .text-center { text-align: center; }
+        .mt-1 { margin-top: 0.5rem; }
+        .mt-2 { margin-top: 1rem; }
+        .mt-3 { margin-top: 2rem; }
+    </style>
+</head>
+<body>
+
+    <!-- ========== NAVEGACIÓN ========== -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">amandarina<span>.</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#sobre-mi" onclick="closeMenu()">Sobre mí</a></li>
+                <li><a href="#servicios" onclick="closeMenu()">Servicios</a></li>
+                <li><a href="#proyectos" onclick="closeMenu()">Proyectos</a></li>
+                <li><a href="#proceso" onclick="closeMenu()">Proceso</a></li>
+                <li><a href="#contacto" onclick="closeMenu()">Contacto</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag animate-up">Marketing Estratégico</div>
+            <h1 class="animate-up delay-1">Tu marca merece más que <em>posts bonitos</em></h1>
+            <p class="hero-sub animate-up delay-2">
+                Estrategia de marca, auditoría de negocio y contenido con propósito.
+                Ayudo a solopreneurs, marcas personales y pequeños negocios
+                a construir una presencia que conecte de verdad.
+            </p>
+            <div class="animate-up delay-3">
+                <a href="#contacto" class="btn">Trabajemos juntos</a>
+                <a href="#proyectos" class="btn btn-outline">Ver proyectos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SOBRE MÍ ========== -->
+    <section class="about" id="sobre-mi">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <!-- 📸 REEMPLAZÁ ESTO CON TU FOTO -->
+                    <!-- <img src="tu-foto.jpg" alt="Amanda Quintero"> -->
+                    📸 Tu foto profesional va acá<br>
+                    <small>(reemplazá este bloque con una etiqueta &lt;img&gt;)</small>
+                </div>
+                <div class="about-text">
+                    <div class="section-label">Sobre mí</div>
+                    <h2 class="section-title">De recruiter tech a<br>estratega de marketing</h2>
+                    <p>
+                        Soy Amanda, fundadora de <strong>Amandarina Agency</strong>.
+                        Después de años trabajando en reclutamiento técnico y adquisición de talento,
+                        descubrí que mi verdadera pasión estaba en entender marcas, no solo candidatos.
+                    </p>
+                    <p>
+                        Mi background en recruiting me dio algo que muchos marketers no tienen:
+                        la habilidad de <span class="about-highlight">diagnosticar</span> qué necesita
+                        realmente un negocio, hacer las preguntas correctas y conectar
+                        estrategia con ejecución.
+                    </p>
+                    <p>
+                        Hoy trabajo con emprendedores y pequeños negocios que saben que
+                        necesitan más que presencia en redes — necesitan una
+                        <strong>estrategia real</strong>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVICIOS ========== -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="services-header">
+                <div class="section-label">Servicios</div>
+                <h2 class="section-title">¿En qué puedo ayudarte?</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>Auditoría de Marca</h3>
+                    <p>
+                        Análisis profundo de tu marca, presencia digital, mensajes y
+                        posicionamiento. Recibís un diagnóstico completo con recomendaciones
+                        accionables para mejorar.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📐</div>
+                    <h3>Estrategia de Contenido</h3>
+                    <p>
+                        Plan editorial personalizado con pilares de contenido, calendario,
+                        formatos y optimización. Todo alineado con tus objetivos de negocio,
+                        no con métricas de vanidad.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤝</div>
+                    <h3>Community Management</h3>
+                    <p>
+                        Gestión estratégica de tus redes sociales con foco en construir
+                        comunidad real. Creación de contenido, engagement y reportes
+                        mensuales de resultados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROYECTOS ========== -->
+    <section class="projects" id="proyectos">
+        <div class="container">
+            <div class="projects-header">
+                <div class="section-label">Proyectos</div>
+                <h2 class="section-title">Trabajo reciente</h2>
+            </div>
+            <div class="projects-grid">
+
+                <!-- PROYECTO 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <!-- 📸 Captura o mockup del proyecto -->
+                        🖼️ Imagen del proyecto
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tag">Auditoría de Marca</div>
+                        <h3>Nombre del Cliente / Proyecto</h3>
+                        <p>
+                            Breve descripción del desafío: qué problema tenía el cliente
+                            y qué enfoque estratégico usaste para resolverlo.
+                        </p>
+                        <div class="project-metrics">
+                            📊 <span>Métricas próximamente</span> — resultados en seguimiento a 90 días
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROYECTO 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        🖼️ Imagen del proyecto
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tag">Estrategia de Contenido</div>
+                        <h3>Nombre del Cliente / Proyecto</h3>
+                        <p>
+                            Breve descripción del desafío: qué problema tenía el cliente
+                            y qué enfoque estratégico usaste para resolverlo.
+                        </p>
+                        <div class="project-metrics">
+                            📊 <span>Métricas próximamente</span> — resultados en seguimiento a 90 días
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROYECTO 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        🖼️ Imagen del proyecto
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tag">Community Management</div>
+                        <h3>Nombre del Cliente / Proyecto</h3>
+                        <p>
+                            Breve descripción del desafío: qué problema tenía el cliente
+                            y qué enfoque estratégico usaste para resolverlo.
+                        </p>
+                        <div class="project-metrics">
+                            📊 <span>Métricas próximamente</span> — resultados en seguimiento a 90 días
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROYECTO 4 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        🖼️ Imagen del proyecto
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tag">Branding</div>
+                        <h3>Nombre del Cliente / Proyecto</h3>
+                        <p>
+                            Breve descripción del desafío: qué problema tenía el cliente
+                            y qué enfoque estratégico usaste para resolverlo.
+                        </p>
+                        <div class="project-metrics">
+                            📊 <span>Métricas próximamente</span> — resultados en seguimiento a 90 días
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROCESO ========== -->
+    <section class="process" id="proceso">
+        <div class="container">
+            <div class="process-header">
+                <div class="section-label">Cómo trabajo</div>
+                <h2 class="section-title">Mi proceso en 4 pasos</h2>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <h3>Diagnóstico</h3>
+                    <p>Analizo tu marca, audiencia, competencia y presencia actual. Entiendo dónde estás y a dónde querés llegar.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <h3>Estrategia</h3>
+                    <p>Diseño un plan personalizado con objetivos claros, pilares de contenido y un roadmap de ejecución.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <h3>Ejecución</h3>
+                    <p>Implemento la estrategia con contenido de calidad, calendario editorial y gestión de comunidad.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <h3>Optimización</h3>
+                    <p>Mido resultados, ajusto lo que haga falta y escalo lo que funciona. Marketing basado en datos, no en intuición.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIOS ========== -->
+    <section class="testimonials" id="testimonios">
+        <div class="container">
+            <div class="testimonials-header">
+                <div class="section-label">Testimonios</div>
+                <h2 class="section-title">Lo que dicen de trabajar conmigo</h2>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-quote">
+                    <!-- ✏️ REEMPLAZÁ con un testimonio real -->
+                    Acá va el testimonio de un cliente o colega.
+                    Puede ser sobre tu capacidad analítica, tu visión estratégica
+                    o tu profesionalismo. Incluso un testimonio de tu etapa en recruiting cuenta.
+                </p>
+                <p class="testimonial-author">Nombre del Cliente</p>
+                <p class="testimonial-role">Cargo / Empresa</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACTO ========== -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="contact-inner">
+                <div class="section-label">Contacto</div>
+                <h2 class="section-title">¿Lista para transformar tu marca?</h2>
+                <p>
+                    Contame sobre tu proyecto y veamos juntas cómo puedo ayudarte.
+                    La primera consulta es sin costo.
+                </p>
+                <!-- ✏️ REEMPLAZÁ el mailto con tu email real -->
+                <a href="mailto:hola@amandarina.agency" class="btn">Enviame un mensaje</a>
+                <div class="contact-methods mt-3">
+                    <div class="contact-method">
+                        <span>📧</span> hola@amandarina.agency
+                    </div>
+                    <div class="contact-method">
+                        <span>💼</span> <a href="https://linkedin.com/in/tu-perfil" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <ul class="footer-links">
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <p>&copy; 2026 Amandarina Agency. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script>
+        // Navbar scroll effect
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile menu
+        const toggle = document.getElementById('navToggle');
+        const links = document.getElementById('navLinks');
+        toggle.addEventListener('click', () => links.classList.toggle('open'));
+        function closeMenu() { links.classList.remove('open'); }
+
+        // Scroll animations (Intersection Observer)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.service-card, .project-card, .process-step, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
