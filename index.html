@@ -7,7 +7,7 @@
     <meta name="description" content="Amandarina Agency — Estrategia de marca, auditoría de negocio y contenido para solopreneurs, marcas personales, PyMEs y startups.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&family=Montserrat:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:wght@400;700&family=Montserrat:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
             --color-bg:         #FFF8F0;
@@ -20,7 +20,8 @@
             --color-dark-text:  #FFF8F0;
             --color-border:     #E8E2DA;
             --color-card-bg:    #FFFFFF;
-            --font-heading: 'Playfair Display SC', Georgia, serif;
+            --font-heading: 'Playfair Display', Georgia, serif;
+            --font-heading-sc: 'Playfair Display SC', Georgia, serif;
             --font-body:    'Montserrat', system-ui, sans-serif;
             --section-padding: 6rem 2rem;
             --max-width: 1100px;
@@ -44,7 +45,7 @@
         .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255, 248, 240, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border); transition: box-shadow 0.3s; }
         .nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
         .nav-inner { max-width: var(--max-width); margin: 0 auto; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
-        .nav-logo { font-family: var(--font-heading); font-size: 1.2rem; color: var(--color-dark); letter-spacing: 0.05em; }
+        .nav-logo { font-family: var(--font-heading-sc); font-size: 1.2rem; color: var(--color-dark); letter-spacing: 0.05em; }
         .nav-logo span { color: var(--color-accent); }
         .nav-links { display: flex; gap: 2rem; list-style: none; }
         .nav-links a { color: var(--color-text-soft); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.3s; }
@@ -99,7 +100,7 @@
         .process-header .section-label { color: var(--color-accent); }
         .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
         .process-step { text-align: center; }
-        .step-number { font-family: var(--font-heading); font-size: 3rem; color: var(--color-accent); line-height: 1; margin-bottom: 1rem; }
+        .step-number { font-family: var(--font-heading-sc); font-size: 3rem; color: var(--color-accent); line-height: 1; margin-bottom: 1rem; }
         .process-step h3 { font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 0.5rem; }
         .process-step p { color: rgba(255, 248, 240, 0.65); font-size: 0.9rem; line-height: 1.6; font-weight: 300; }
         @media (max-width: 768px) { .process-steps { grid-template-columns: repeat(2, 1fr); } }
