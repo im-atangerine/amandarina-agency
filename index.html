@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amandarina Agency — Estrategia con intención</title>
-    <meta name="description" content="Amandarina Agency — Marketing, estrategia de marca, auditoría de negocio y contenido para emprendedores, marcas personales y PyMEs que necesitan comunicar con claridad.">
+    <title>Amandarina Agency — Marketing estratégico para PyMEs de la Patagonia</title>
+    <meta name="description" content="Amandarina Agency — Auditoría de marca y negocio, estrategia de contenido y ejecución mensual para PyMEs y marcas de la Patagonia argentina. Marketing que empieza entendiendo el negocio.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display+SC:wght@400;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -85,7 +85,7 @@
         .nav-inner { max-width: var(--max-width); margin: 0 auto; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
         .nav-logo { font-family: var(--font-heading-sc); font-size: 1.1rem; color: var(--color-green); letter-spacing: 0.08em; }
         .nav-logo span { color: var(--color-accent); }
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links { display: flex; gap: 1.7rem; list-style: none; }
         .nav-links a { color: var(--color-text-soft); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; transition: color 0.3s ease; }
         .nav-links a:hover { color: var(--color-accent); }
         .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
@@ -169,20 +169,20 @@
         }
         .hero h1 {
             font-family: var(--font-heading);
-            font-size: clamp(2.7rem, 7vw, 6.4rem);
-            line-height: 0.98;
+            font-size: clamp(2.5rem, 6vw, 5.4rem);
+            line-height: 1.02;
             margin-bottom: 1.6rem;
-            max-width: 880px;
+            max-width: 900px;
             font-weight: 600;
             color: var(--color-green);
-            letter-spacing: -0.045em;
+            letter-spacing: -0.04em;
         }
         .hero h1 em { font-style: italic; color: var(--color-accent); font-weight: 500; }
         .hero-sub {
-            font-size: clamp(1rem, 1.7vw, 1.24rem);
+            font-size: clamp(1rem, 1.7vw, 1.2rem);
             font-weight: 300;
             color: var(--color-text-soft);
-            max-width: 660px;
+            max-width: 680px;
             margin-bottom: 2.4rem;
             line-height: 1.85;
         }
@@ -250,7 +250,7 @@
             bottom: -160px;
         }
         .services-header { text-align: center; margin-bottom: 3.6rem; }
-        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; align-items: stretch; }
         .service-card {
             background: rgba(255, 248, 240, 0.86);
             border-radius: var(--radius-lg);
@@ -259,15 +259,122 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            min-height: 345px;
+            display: flex;
+            flex-direction: column;
         }
         .service-card::before { content: ''; position: absolute; top: 0; left: 2rem; right: 2rem; height: 3px; background: var(--color-accent); transform: scaleX(0.34); transform-origin: left; transition: transform 0.4s ease; }
         .service-card:hover::before { transform: scaleX(1); }
         .service-card:hover { transform: translateY(-5px); box-shadow: 0 16px 38px rgba(28,28,28,0.08); }
+        .service-card.featured { border-color: rgba(240, 123, 40, 0.42); box-shadow: 0 14px 36px rgba(240, 123, 40, 0.10); }
+        .service-card.featured::before { transform: scaleX(1); }
+        .service-badge {
+            position: absolute;
+            top: 1.4rem;
+            right: 1.4rem;
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #fff;
+            background: var(--color-accent);
+            padding: 0.32rem 0.7rem;
+            border-radius: 50px;
+        }
         .service-icon { width: 54px; height: 54px; background: rgba(246, 209, 177, 0.42); border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: 1.45rem; margin-bottom: 1.4rem; }
         .service-card h3 { font-family: var(--font-heading); font-size: 1.45rem; line-height: 1.1; margin-bottom: 0.85rem; color: var(--color-green); font-weight: 600; }
-        .service-card p { color: var(--color-text-soft); font-size: 0.95rem; line-height: 1.72; font-weight: 300; }
-        .service-tag { display: inline-block; margin-top: 1.1rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent); }
+        .service-for { color: var(--color-text-soft); font-size: 0.95rem; line-height: 1.72; font-weight: 300; margin-bottom: 1.35rem; }
+        .service-list { list-style: none; margin-bottom: 1.5rem; }
+        .service-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.6rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            font-weight: 400;
+            color: var(--color-text);
+        }
+        .service-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.62em;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--color-accent);
+        }
+        .service-meta { font-size: 0.82rem; color: var(--color-text-soft); font-weight: 400; margin-bottom: 1.2rem; }
+        .service-meta strong { color: var(--color-green); font-weight: 600; }
+        .service-result {
+            margin-top: auto;
+            padding-top: 1.1rem;
+            border-top: 1px solid var(--color-border);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--color-green);
+            font-weight: 500;
+        }
+        .services-footer { text-align: center; margin-top: 3rem; position: relative; z-index: 2; }
+        .services-footer p { color: var(--color-text-soft); font-size: 1rem; font-weight: 300; margin-bottom: 1.6rem; max-width: 560px; margin-left: auto; margin-right: auto; }
+
+        .proof { padding: var(--section-padding); position: relative; overflow: hidden; }
+        .proof::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 55% 45% 50% 50%;
+            background: rgba(45, 106, 90, 0.07);
+            left: -130px;
+            bottom: -120px;
+        }
+        .proof-header { text-align: center; margin-bottom: 3.2rem; }
+        .proof-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem; }
+        .proof-card {
+            background: rgba(255, 248, 240, 0.86);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 2.2rem 2rem;
+            transition: all 0.3s ease;
+        }
+        .proof-card:hover { transform: translateY(-4px); box-shadow: 0 16px 38px rgba(28,28,28,0.07); }
+        .proof-card.wide { grid-column: 1 / -1; padding: 2.6rem clamp(1.6rem, 4vw, 3rem); }
+        .proof-card h3 { font-family: var(--font-heading); font-size: 1.5rem; color: var(--color-green); font-weight: 600; margin-bottom: 0.3rem; line-height: 1.15; }
+        .proof-sector { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 1.2rem; }
+        .proof-card p { color: var(--color-text-soft); font-size: 0.95rem; line-height: 1.72; font-weight: 300; margin-bottom: 1.2rem; }
+        .proof-card p.proof-lead { max-width: 700px; }
+        .proof-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.2rem;
+            margin: 1.9rem 0;
+            padding: 1.7rem 0;
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .proof-stat-num {
+            font-family: var(--font-heading);
+            font-size: clamp(1.8rem, 3.4vw, 2.7rem);
+            line-height: 1;
+            color: var(--color-accent);
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.4rem;
+        }
+        .proof-stat-label { font-size: 0.76rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--color-text-soft); line-height: 1.4; }
+        .proof-note { font-size: 0.8rem; color: var(--color-text-soft); font-weight: 300; font-style: italic; margin-top: 1.1rem; }
+        .proof-result {
+            padding: 1rem 1.2rem;
+            border-left: 3px solid var(--color-accent);
+            background: rgba(246, 209, 177, 0.22);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            color: var(--color-green);
+            font-size: 0.96rem;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+        .proof-cta { grid-column: 1 / -1; text-align: center; margin-top: 0.6rem; }
+        .proof-cta p { color: var(--color-text-soft); font-size: 1rem; font-weight: 300; max-width: 560px; margin: 0 auto 1.5rem; }
 
         .process { padding: var(--section-padding); background: var(--color-green); color: var(--color-bg); position: relative; overflow: hidden; }
         .process::before { content: ''; position: absolute; width: 620px; height: 620px; border-radius: 50%; border: 1px solid rgba(240, 123, 40, 0.26); top: -360px; left: -180px; }
@@ -304,7 +411,8 @@
             box-shadow: 0 18px 48px rgba(28,28,28,0.06);
         }
         .contact-inner .section-title { margin-bottom: 1rem; }
-        .contact-inner p { color: var(--color-text-soft); font-size: 1.05rem; margin-bottom: 2.4rem; font-weight: 300; }
+        .contact-inner p { color: var(--color-text-soft); font-size: 1.05rem; margin-bottom: 1.2rem; font-weight: 300; }
+        .contact-promise { font-size: 0.9rem; color: var(--color-green); font-weight: 600; margin-bottom: 2.2rem !important; }
         .contact-methods { display: flex; gap: 1.4rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
         .contact-method { display: flex; align-items: center; gap: 0.5rem; color: var(--color-text-soft); font-size: 0.95rem; }
         .contact-method span { font-size: 1.2rem; }
@@ -316,6 +424,7 @@
 
         @media (max-width: 900px) {
             .services-grid { grid-template-columns: 1fr; }
+            .proof-grid { grid-template-columns: 1fr; }
             .process-steps { grid-template-columns: repeat(2, 1fr); }
             .about-grid { grid-template-columns: 1fr; gap: 2.8rem; }
             .about-image { max-width: 440px; margin: 0 auto; }
@@ -330,10 +439,11 @@
             .hero { min-height: auto; padding-top: 8.2rem; }
             .hero::before { width: 380px; height: 380px; top: -220px; right: -210px; }
             .process-steps { grid-template-columns: 1fr; }
+            .proof-stats { grid-template-columns: repeat(2, 1fr); gap: 1.6rem 1rem; }
         }
         @media (max-width: 520px) {
             .nav-inner { padding: 0.85rem 1.2rem; }
-            .hero h1 { font-size: clamp(2.5rem, 16vw, 4.3rem); }
+            .hero h1 { font-size: clamp(2.1rem, 11vw, 3.4rem); }
             .hero-sub { font-size: 0.98rem; }
             .section-title { font-size: clamp(2rem, 10vw, 3rem); }
             .contact-methods { align-items: center; flex-direction: column; }
@@ -349,6 +459,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#sobre-mi" onclick="closeMenu()">Sobre mí</a></li>
                 <li><a href="#servicios" onclick="closeMenu()">Servicios</a></li>
+                <li><a href="#clientes" onclick="closeMenu()">Resultados</a></li>
                 <li><a href="#proceso" onclick="closeMenu()">Proceso</a></li>
                 <li><a href="#contacto" onclick="closeMenu()">Contacto</a></li>
             </ul>
@@ -361,15 +472,15 @@
     <section class="hero">
         <div class="hero-shape" aria-hidden="true"></div>
         <div class="hero-content">
-            <div class="hero-tag animate-up">Estrategia con intención</div>
-            <h1 class="animate-up delay-1">Marketing para marcas que necesitan comunicar con más <em>claridad.</em></h1>
+            <div class="hero-tag animate-up">Estrategia, contenido y campañas</div>
+            <h1 class="animate-up delay-1">Tenés un buen negocio. Tu comunicación todavía no lo <em>demuestra.</em></h1>
             <p class="hero-sub animate-up delay-2">
-                Acompaño a emprendedores, marcas personales y PyMEs a ordenar su mensaje,
-                entender qué necesita su negocio y crear una comunicación más estratégica,
-                humana y coherente.
+                Trabajamos con PyMEs y marcas de la Patagonia que venden bien puertas adentro,
+                pero que en redes, en su web o frente a un cliente nuevo parecen más chicas
+                de lo que realmente son. Ordenamos el mensaje, definimos qué hay que decir y lo ejecutamos.
             </p>
             <div class="animate-up delay-3">
-                <a href="#contacto" class="btn">Hagamos equipo</a>
+                <a href="#contacto" class="btn">Empecemos por una auditoría</a>
                 <a href="#servicios" class="btn btn-outline">Ver servicios</a>
             </div>
             <div class="hero-note animate-up delay-3">Marketing que empieza entendiendo el negocio.</div>
@@ -384,20 +495,23 @@
                 </div>
                 <div class="about-text">
                     <div class="section-label">Sobre mí</div>
-                    <h2 class="section-title">De recruiting tech a estrategia de <em>marca.</em></h2>
+                    <h2 class="section-title">De entrevistar personas a ordenar <em>marcas.</em></h2>
                     <p>
-                        Soy Amanda, fundadora de <strong>Amandarina Agency</strong>. Durante años trabajé en recruiting técnico y adquisición de talento, acompañando procesos donde la comunicación, la confianza y la claridad podían cambiar completamente una decisión.
+                        Soy Amanda, fundadora de <strong>Amandarina Agency</strong>.
                     </p>
                     <p>
-                        Esa experiencia me enseñó a hacer mejores preguntas, detectar necesidades reales y entender cómo se construye una buena impresión desde el primer contacto.
+                        Durante más de cinco años trabajé en recruiting técnico y adquisición de talento para empresas de tecnología. Mi trabajo era entender qué buscaba una compañía, traducirlo y lograr que la persona correcta dijera que sí. Suena a recursos humanos, pero es marketing: los candidatos investigan empresas igual que los consumidores investigan productos, y todo pasa por cómo te percibe alguien que todavía no te conoce.
                     </p>
                     <p>
-                        Hoy uso esa mirada para ayudar a emprendedores, marcas personales y PyMEs a comunicar con más intención: desde el <span class="about-highlight">diagnóstico del negocio</span> hasta la creación de contenido y estrategias que conecten de verdad.
+                        Esa experiencia me dejó una forma de trabajar que hoy aplico todos los días: <span class="about-highlight">entender bien el negocio antes de comunicarlo</span>, y detectar cuándo lo que una marca dice no es lo que realmente la hace buena.
                     </p>
                     <p>
-                        Desde la Patagonia argentina, trabajo con marcas que quieren ordenar su comunicación, crecer con más claridad y construir una presencia digital más auténtica.
+                        Trabajo desde Cipolletti, Río Negro, con empresas de la región: negocios sólidos, con trayectoria y clientes fieles, cuya comunicación todavía no está a la altura de lo que hacen.
                     </p>
-                    <div class="signature-card">Entender primero. Crear después. Comunicar con intención.</div>
+                    <p>
+                        En Amandarina combinamos estrategia y ejecución: ordenamos la comunicación, desarrollamos el contenido y gestionamos las campañas, con seguimiento de resultados.
+                    </p>
+                    <div class="signature-card">Entender primero. Crear después.</div>
                 </div>
             </div>
         </div>
@@ -407,28 +521,120 @@
         <div class="container">
             <div class="services-header">
                 <div class="section-label">Servicios</div>
-                <h2 class="section-title">¿Cómo puedo acompañar <em>tu marca?</em></h2>
-                <p class="section-intro">Cada servicio parte de una misma idea: antes de crear contenido, necesitamos entender qué necesita comunicar tu marca.</p>
+                <h2 class="section-title">Tres formas de trabajar <em>juntas.</em></h2>
+                <p class="section-intro">Todo arranca con la auditoría: es el diagnóstico que define qué hay que comunicar y en qué orden. A partir de ahí, el acompañamiento mensual lo lleva a la práctica.</p>
             </div>
             <div class="services-grid">
-                <div class="service-card">
+
+                <div class="service-card featured">
+                    <div class="service-badge">Empezá por acá</div>
                     <div class="service-icon">🔍</div>
                     <h3>Auditoría de Marca y Negocio</h3>
-                    <p>Para marcas que sienten que están comunicando, pero no necesariamente con claridad. Analizo tu propuesta, presencia digital, mensajes, audiencia, canales y oportunidades de mejora.</p>
-                    <span class="service-tag">Diagnóstico + prioridades</span>
+                    <p class="service-for">Para vos si sentís que estás publicando, invirtiendo o moviéndote, pero no sabés si algo de eso está funcionando.</p>
+                    <ul class="service-list">
+                        <li>Cuestionario previo sobre tu negocio, tu cliente y tu contexto</li>
+                        <li>Sesión estratégica de 90 minutos</li>
+                        <li>Análisis de propuesta de valor, precio, cliente ideal, canales y competencia</li>
+                        <li>Reporte con hallazgos y acciones ordenadas por prioridad</li>
+                        <li>Llamada de seguimiento a los 30 días</li>
+                    </ul>
+                    <div class="service-meta"><strong>Entrega:</strong> 5 días hábiles después de la sesión</div>
+                    <div class="service-result">Terminás con un diagnóstico claro y un plan de acción priorizado para los próximos meses.</div>
                 </div>
+
                 <div class="service-card">
                     <div class="service-icon">📐</div>
-                    <h3>Estrategia de Contenido</h3>
-                    <p>Para marcas que necesitan dejar de publicar por intuición y empezar a comunicar con dirección. Definimos pilares, tono de voz, formatos, calendario y mensajes clave.</p>
-                    <span class="service-tag">Contenido con dirección</span>
+                    <h3>Acompañamiento Esencial</h3>
+                    <p class="service-for">Para marcas que necesitan sostener una presencia constante en redes, con contenido planificado y alineado a sus objetivos.</p>
+                    <ul class="service-list">
+                        <li>Estrategia de contenido: pilares, tono de voz y calendario mensual</li>
+                        <li>Creación de contenido para redes (piezas y textos)</li>
+                        <li>Revisión mensual de resultados y ajustes</li>
+                        <li>Canal directo de consultas</li>
+                    </ul>
+                    <div class="service-meta"><strong>Formato:</strong> mensual, con mínimo de 3 meses</div>
+                    <div class="service-result">Una comunicación constante y coherente, donde cada publicación cumple una función dentro del negocio.</div>
                 </div>
+
                 <div class="service-card">
                     <div class="service-icon">🤝</div>
-                    <h3>Acompañamiento Mensual</h3>
-                    <p>Para marcas que necesitan sostener su comunicación con estrategia, contenido y seguimiento. Planificación, creación y optimización para una presencia más coherente y humana.</p>
-                    <span class="service-tag">Ejecución + seguimiento</span>
+                    <h3>Acompañamiento Completo</h3>
+                    <p class="service-for">Para empresas que necesitan estrategia, contenido y campañas trabajando de forma coordinada hacia objetivos comerciales.</p>
+                    <ul class="service-list">
+                        <li>Todo lo del plan Esencial</li>
+                        <li>Campañas de Meta Ads: armado, gestión y optimización</li>
+                        <li>Materiales comerciales: catálogos, presentaciones, piezas de venta</li>
+                        <li>Actualizaciones y mejoras de tu sitio web</li>
+                        <li>Reporte mensual con métricas y decisiones tomadas</li>
+                    </ul>
+                    <div class="service-meta"><strong>Formato:</strong> mensual, con mínimo de 3 meses</div>
+                    <div class="service-result">Toda tu comunicación digital gestionada de punta a punta, con métricas y ajustes mes a mes.</div>
                 </div>
+
+            </div>
+            <div class="services-footer">
+                <p>Los precios se definen según el alcance real de cada proyecto. Escribinos y te preparamos una propuesta concreta.</p>
+                <a href="#contacto" class="btn">Pedir propuesta</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECCIÓN CASO — datos reales del portfolio (abril–agosto 2026)
+         ------------------------------------------------------------
+         El cliente se mantiene anónimo, igual que en el portfolio PDF.
+         Si más adelante te autorizan por escrito a nombrarlo, cambiá
+         el h3 y el .proof-sector — el resto queda igual.
+         Actualizá las métricas cuando cierres un nuevo período.
+         ============================================================ -->
+    <section class="proof" id="clientes">
+        <div class="container">
+            <div class="proof-header">
+                <div class="section-label">Un caso real</div>
+                <h2 class="section-title">Cuatro meses. Esto es lo que <em>cambió.</em></h2>
+                <p class="section-intro">Un proyecto que muestra cómo la estrategia se traduce en visibilidad y en consultas comerciales reales.</p>
+            </div>
+            <div class="proof-grid">
+
+                <div class="proof-card wide">
+                    <h3>Empresa de soluciones industriales para oil &amp; gas</h3>
+                    <div class="proof-sector">Río Negro · Trabajo en curso desde abril 2026</div>
+                    <p class="proof-lead">
+                        Tenían productos, servicios especializados y años de experiencia. En redes eso no se veía:
+                        publicaban una o dos veces por semana, a veces menos, siempre con el mismo formato y sin
+                        tracción real. Definimos pilares de contenido, ordenamos la identidad visual y sumamos campañas
+                        de Meta Ads con seguimiento y ajuste de resultados.
+                    </p>
+                    <div class="proof-stats">
+                        <div class="proof-stat">
+                            <div class="proof-stat-num">173.117</div>
+                            <div class="proof-stat-label">Personas alcanzadas</div>
+                        </div>
+                        <div class="proof-stat">
+                            <div class="proof-stat-num">412.623</div>
+                            <div class="proof-stat-label">Impresiones</div>
+                        </div>
+                        <div class="proof-stat">
+                            <div class="proof-stat-num">6.724</div>
+                            <div class="proof-stat-label">Clics registrados</div>
+                        </div>
+                        <div class="proof-stat">
+                            <div class="proof-stat-num">34</div>
+                            <div class="proof-stat-label">Conversaciones iniciadas</div>
+                        </div>
+                    </div>
+                    <div class="proof-result">
+                        Hoy les llegan consultas que mencionan las redes, y algunas ya se convirtieron en ventas.
+                        Para un rubro técnico e industrial, eso es lo que importa: no seguidores, clientes.
+                    </div>
+                    <p class="proof-note">Nombre del cliente reservado por confidencialidad. Podemos ampliar el caso completo en una reunión.</p>
+                </div>
+
+                <div class="proof-cta">
+                    <p>Si tu empresa tiene valor pero necesita comunicarlo de una manera más clara, hablemos.</p>
+                    <a href="#contacto" class="btn">Hablemos</a>
+                </div>
+
             </div>
         </div>
     </section>
@@ -437,29 +643,29 @@
         <div class="container">
             <div class="process-header">
                 <div class="section-label">Cómo trabajo</div>
-                <h2 class="section-title">Un proceso simple, pero con intención.</h2>
-                <p class="section-intro">No se trata de publicar más. Se trata de entender mejor, decidir con criterio y comunicar de forma consistente.</p>
+                <h2 class="section-title">Cuatro pasos. Sin vueltas.</h2>
+                <p class="section-intro">Comunicar bien no es publicar más. Es que cada contenido tenga una función concreta dentro del negocio.</p>
             </div>
             <div class="process-steps">
                 <div class="process-step">
                     <div class="step-number">01</div>
                     <h3>Diagnóstico</h3>
-                    <p>Entiendo tu marca, tu negocio, tu audiencia y el contexto en el que estás comunicando.</p>
+                    <p>Analizamos tu negocio, tu oferta, tu público y los objetivos comerciales detrás de la comunicación.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">02</div>
                     <h3>Estrategia</h3>
-                    <p>Ordeno objetivos, mensajes clave, pilares de contenido y prioridades accionables.</p>
+                    <p>Definimos mensajes, pilares de contenido, formatos y canales, con prioridades claras.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">03</div>
                     <h3>Ejecución</h3>
-                    <p>Transformo la estrategia en contenido claro, coherente y alineado con la identidad de tu marca.</p>
+                    <p>Lo llevamos a contenido concreto: piezas, textos, campañas y materiales comerciales.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">04</div>
-                    <h3>Optimización</h3>
-                    <p>Mido resultados, observo qué funciona y ajusto la estrategia cuando hace falta. Marketing con datos, criterio y contexto.</p>
+                    <h3>Revisión</h3>
+                    <p>Miramos qué funcionó y qué no. Ajustamos. Sin quedarnos atados a un plan que dejó de servir.</p>
                 </div>
             </div>
         </div>
@@ -469,12 +675,15 @@
         <div class="container">
             <div class="contact-inner">
                 <div class="section-label">Contacto</div>
-                <h2 class="section-title">¿Ordenamos la comunicación de tu marca?</h2>
-                <p>Contame en qué momento está tu negocio y qué sentís que hoy necesita mejorar. Podemos empezar con una primera conversación para entender si Amandarina es el acompañamiento que estás buscando.</p>
-                <a href="mailto:hola@amandarina.agency" class="btn">Enviame un mensaje</a>
+                <h2 class="section-title">Contame en qué momento está <em>tu negocio.</em></h2>
+                <p>No necesitás tener definido qué servicio buscás. Contanos qué está pasando: qué probaste, qué no terminó de funcionar y hacia dónde querés llevar tu marca. Con eso armamos una propuesta concreta.</p>
+                <a href="mailto:hola@amandarina.agency" class="btn">Escribinos</a>
                 <div class="contact-methods mt-3">
                     <div class="contact-method">
                         <span>📧</span><a href="mailto:hola@amandarina.agency">hola@amandarina.agency</a>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/5492994624587" target="_blank" rel="noreferrer">WhatsApp</a>
                     </div>
                     <div class="contact-method">
                         <i class="fa-brands fa-instagram"></i> <a href="https://www.instagram.com/amandarinaagency" target="_blank" rel="noreferrer">Instagram</a>
@@ -491,10 +700,11 @@
         <ul class="footer-links">
             <li><a href="#sobre-mi">Sobre mí</a></li>
             <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#clientes">Resultados</a></li>
             <li><a href="#proceso">Proceso</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
-        <p>© 2026 Amandarina Agency · Estrategia con intención 🍊</p>
+        <p>© 2026 Amandarina Agency · Marketing y estrategia de contenido 🍊</p>
     </footer>
 
     <script>
@@ -509,7 +719,7 @@
                 if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; }
             });
         }, { threshold: 0.1 });
-        document.querySelectorAll('.service-card, .process-step').forEach(el => {
+        document.querySelectorAll('.service-card, .process-step, .proof-card').forEach(el => {
             el.style.opacity = '0'; el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
