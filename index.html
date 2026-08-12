@@ -83,7 +83,8 @@
         }
         .nav.scrolled { box-shadow: 0 2px 24px rgba(28, 28, 28, 0.07); }
         .nav-inner { max-width: var(--max-width); margin: 0 auto; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
-        .nav-logo { font-family: var(--font-heading-sc); font-size: 1.1rem; color: var(--color-green); letter-spacing: 0.08em; }
+        .nav-logo { font-family: var(--font-heading-sc); font-size: 1.1rem; color: var(--color-green); letter-spacing: 0.08em; display: flex; align-items: center; gap: 0.6rem; }
+        .nav-logo img { width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0; }
         .nav-logo span { color: var(--color-accent); }
         .nav-links { display: flex; gap: 1.7rem; list-style: none; }
         .nav-links a { color: var(--color-text-soft); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; transition: color 0.3s ease; }
@@ -420,7 +421,7 @@
         .footer { background: var(--color-green); color: rgba(255, 248, 240, 0.56); padding: 2.8rem 2rem; text-align: center; font-size: 0.85rem; }
         .footer a { color: var(--color-accent); }
         .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1rem; list-style: none; flex-wrap: wrap; }
-        .mt-3 { margin-top: 2rem; }
+        .footer-logo { width: 124px; height: 124px; border-radius: 50%; margin: 0 auto 1.7rem; }.mt-3 { margin-top: 2rem; }
 
         @media (max-width: 900px) {
             .services-grid { grid-template-columns: 1fr; }
@@ -455,7 +456,10 @@
 
     <nav class="nav" id="nav">
         <div class="nav-inner">
-            <a href="#" class="nav-logo">amandarina<span>.</span>agency</a>
+            <a href="#" class="nav-logo">
+                <img src="amandarina-logo.png" alt="Amandarina Agency">
+                amandarina<span>.</span>agency
+            </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#sobre-mi" onclick="closeMenu()">Sobre mí</a></li>
                 <li><a href="#servicios" onclick="closeMenu()">Servicios</a></li>
@@ -472,7 +476,7 @@
     <section class="hero">
         <div class="hero-shape" aria-hidden="true"></div>
         <div class="hero-content">
-            <div class="hero-tag animate-up">Estrategia, contenido y campañas</div>
+            <div class="hero-tag animate-up">Estrategia, contenido y comunicación</div>
             <h1 class="animate-up delay-1">Tenés un buen negocio. Tu comunicación todavía no lo <em>demuestra.</em></h1>
             <p class="hero-sub animate-up delay-2">
                 Trabajamos con PyMEs y marcas de la Patagonia que venden bien puertas adentro,
@@ -624,8 +628,7 @@
                         </div>
                     </div>
                     <div class="proof-result">
-                        Hoy les llegan consultas que mencionan las redes, y algunas ya se convirtieron en ventas.
-                        Para un rubro técnico e industrial, eso es lo que importa: no seguidores, clientes.
+                        Hoy las redes generan consultas comerciales concretas, y varias ya se convirtieron en ventas.
                     </div>
                     <p class="proof-note">Nombre del cliente reservado por confidencialidad. Podemos ampliar el caso completo en una reunión.</p>
                 </div>
@@ -697,6 +700,7 @@
     </section>
 
     <footer class="footer">
+        <img src="amandarina-logo.png" alt="Amandarina Agency" class="footer-logo">
         <ul class="footer-links">
             <li><a href="#sobre-mi">Sobre mí</a></li>
             <li><a href="#servicios">Servicios</a></li>
