@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evaluación inicial gratuita — Amandarina Agency</title>
     <meta name="description" content="Evaluación inicial gratuita: reviso qué encuentra hoy un posible cliente cuando busca tu empresa y te envío las primeras observaciones.">
+    <link rel="icon" href="estrategia y comunicacion.png">
+    <link rel="canonical" href="https://amandarina.agency/evaluacion">
+    <meta property="og:title" content="Evaluación inicial gratuita · Amandarina Agency">
+    <meta property="og:description" content="¿Tu empresa se entiende cuando alguien la busca? Reviso qué encuentra hoy un posible cliente y te envío las primeras observaciones.">
+    <meta property="og:image" content="https://amandarina.agency/estrategia%20y%20comunicacion.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,500&family=Playfair+Display+SC:wght@400;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -42,7 +47,8 @@
 
         .nav { border-bottom: 1px solid var(--color-border); background: rgba(255, 248, 240, 0.9); }
         .nav-inner { max-width: var(--max-width); margin: 0 auto; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-        .nav-logo { font-family: var(--font-heading-sc); font-size: 1.1rem; color: var(--color-green); letter-spacing: 0.08em; }
+        .nav-logo { font-family: var(--font-heading); font-size: 1.35rem; font-weight: 600; color: var(--color-green); letter-spacing: -0.02em; display: flex; align-items: center; gap: 0.6rem; }
+        .nav-logo img { width: 52px; height: 52px; }
         .nav-logo span { color: var(--color-accent); }
         .nav-back { font-size: 0.82rem; font-weight: 600; color: var(--color-text-soft); }
 
@@ -99,11 +105,19 @@
         .next p { color: var(--color-text-soft); max-width: 760px; }
         .next strong { color: var(--color-green); }
 
+        .proof-mini { margin-top: 2.2rem; display: flex; align-items: center; gap: 1.4rem; padding: 1.3rem 1.6rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: rgba(255, 255, 255, 0.55); }
+        .proof-mini-num { font-family: var(--font-heading); font-size: 2.8rem; line-height: 1; font-weight: 600; color: var(--color-accent); flex-shrink: 0; }
+        .proof-mini p { color: var(--color-text-soft); font-size: 0.95rem; }
+        .proof-mini strong { color: var(--color-green); }
+        .proof-mini a { font-weight: 600; white-space: nowrap; }
+        .footer-logo { width: 110px; height: 110px; border-radius: 50%; margin: 0 auto 1.2rem; display: block; }
+        .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1rem; list-style: none; flex-wrap: wrap; }
         .footer { margin-top: 3rem; background: var(--color-green); color: rgba(255, 248, 240, 0.7); padding: 2.2rem 1.5rem; text-align: center; font-size: 0.85rem; }
         .footer a { color: var(--color-accent); }
 
         @media (max-width: 760px) {
             .steps, .fit, form { grid-template-columns: 1fr; }
+            .proof-mini { flex-direction: column; align-items: flex-start; }
             .hero { padding-top: 3rem; }
         }
     </style>
@@ -112,7 +126,7 @@
 
     <nav class="nav">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo">amandarina<span>.</span>agency</a>
+            <a href="index.html" class="nav-logo"><img src="estrategia y comunicacion.png" alt="">Amandarina <span>Agency</span></a>
             <a href="index.html" class="nav-back">← Volver al sitio</a>
         </div>
     </nav>
@@ -120,7 +134,7 @@
     <main>
         <section class="hero">
             <div class="container">
-                <div class="tag">Evaluación inicial gratuita</div>
+                <div class="tag">Evaluación inicial gratuita · B2B</div>
                 <h1>¿Tu empresa se entiende cuando <em>alguien la busca?</em></h1>
                 <p class="hero-sub">Reviso qué encuentra hoy un posible cliente cuando busca tu empresa en LinkedIn, en la web o en Instagram, y te envío las primeras observaciones sobre qué conviene mejorar.</p>
                 <a href="#formulario" class="btn">Pedir mi evaluación</a>
@@ -161,6 +175,10 @@
                     <li>Aparecen online, pero cuesta encontrar sus servicios o cómo contactarlos.</li>
                     <li>Dependen del boca a boca y quieren que nuevos clientes los encuentren.</li>
                 </ul>
+                <div class="proof-mini">
+                    <div class="proof-mini-num">34</div>
+                    <p><strong>conversaciones comerciales iniciadas</strong> en un proyecto con una empresa de soluciones industriales para oil &amp; gas de Río Negro. <a href="index.html#clientes">Ver el caso real →</a></p>
+                </div>
             </div>
         </section>
 
@@ -169,7 +187,7 @@
                 <div class="form-wrap">
                     <h2>Pedí tu evaluación inicial</h2>
                     <p class="form-intro">Gratuita y sin compromiso. Para empresas que venden a otras empresas.</p>
-                    <iframe data-tally-src="https://tally.so/embed/https://tally.so/r/kdV4Rd?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1" loading="lazy" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0" title="Evaluación inicial gratuita"></iframe>
+                    <iframe data-tally-src="https://tally.so/embed/kdV4Rd?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1" loading="lazy" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0" title="Evaluación inicial gratuita"></iframe>
                 </div>
             </div>
         </section>
@@ -185,6 +203,13 @@
     </main>
 
     <footer class="footer">
+        <img src="estrategia y comunicacion.png" alt="Amandarina Agency" class="footer-logo">
+        <ul class="footer-links">
+            <li><a href="index.html#servicios">Servicios</a></li>
+            <li><a href="index.html#clientes">Resultados</a></li>
+            <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+            <li><a href="https://wa.me/5492994624587" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+        </ul>
         <p>© 2026 Amandarina Agency · Estrategia y comunicación 🍊 · <a href="mailto:hola@amandarina.agency">hola@amandarina.agency</a></p>
     </footer>
 
