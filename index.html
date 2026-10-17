@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amandarina Agency · Presencia digital para empresas B2B</title>
-    <meta name="description" content="Presencia digital para empresas B2B. Ayudo a empresas industriales y de servicios a que su LinkedIn, su web y su Instagram expliquen con claridad qué hacen, para quién y por qué elegirlas. Neuquén, Río Negro y Vaca Muerta.">
+    <meta name="description" content="Ayudo a empresas industriales y de servicios a construir y mejorar su presencia digital para que sus posibles clientes las encuentren, entiendan qué hacen y las consulten. Desde Cipolletti, Río Negro.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display+SC:wght@400;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -291,7 +291,7 @@
         .service-icon { width: 54px; height: 54px; background: rgba(246, 209, 177, 0.42); border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: 1.45rem; margin-bottom: 1.4rem; }
         .service-card h3 { font-family: var(--font-heading); font-size: 1.45rem; line-height: 1.1; margin-bottom: 0.85rem; color: var(--color-green); font-weight: 600; }
         .service-for { color: var(--color-text-soft); font-size: 0.95rem; line-height: 1.72; font-weight: 300; margin-bottom: 1.35rem; }
-        .service-list { list-style: none; margin-bottom: 1.5rem; }
+        .service-list { list-style: none; margin-bottom: 1.5rem; flex-grow: 1; }
         .service-list li {
             position: relative;
             padding-left: 1.5rem;
@@ -311,10 +311,16 @@
             border-radius: 50%;
             background: var(--color-accent);
         }
+        .service-price { margin: 1.2rem 0 0; padding: 0.85rem 1rem; border-radius: 14px; background: rgba(246, 209, 177, 0.30); }
+        .service-price-from { display: block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-soft); }
+        .service-price-num { display: block; font-family: var(--font-heading); font-size: 1.6rem; font-weight: 600; line-height: 1.15; color: var(--color-accent-dark); }
+        .service-price-note { display: block; font-size: 0.8rem; color: var(--color-text-soft); line-height: 1.45; margin-top: 0.15rem; }
+        .service-price-row + .service-price-row { margin-top: 0.7rem; padding-top: 0.7rem; border-top: 1px solid var(--color-border); }
+        .services-price-note { text-align: center; font-size: 0.85rem; color: var(--color-text-soft); margin-top: 1.4rem; position: relative; z-index: 2; }
         .service-meta { font-size: 0.82rem; color: var(--color-text-soft); font-weight: 400; margin-bottom: 1.2rem; }
         .service-meta strong { color: var(--color-green); font-weight: 600; }
         .service-result {
-            margin-top: auto;
+            margin-top: 0;
             padding-top: 1.1rem;
             border-top: 1px solid var(--color-border);
             font-size: 0.9rem;
@@ -484,7 +490,6 @@
                 <li><a href="#sobre-mi" onclick="closeMenu()">Sobre mí</a></li>
                 <li><a href="#servicios" onclick="closeMenu()">Servicios</a></li>
                 <li><a href="#clientes" onclick="closeMenu()">Resultados</a></li>
-                <li><a href="#proceso" onclick="closeMenu()">Proceso</a></li>
                 <li><a href="#contacto" onclick="closeMenu()">Contacto</a></li>
                 <li><a href="evaluacion.html">Evaluación gratuita</a></li>
             </ul>
@@ -501,11 +506,11 @@
             <div class="hero-tag animate-up">Presencia digital para empresas B2B</div>
             <h1 class="animate-up delay-1">Antes de elegirte, tienen que <em>encontrar y entender tu negocio.</em></h1>
             <p class="hero-sub animate-up delay-2">
-                Ayudamos a empresas industriales y de servicios a mejorar su presencia digital: que su LinkedIn, su web y su Instagram expliquen con claridad qué hacen, para quién y por qué elegirlas. Para que sus clientes encuentren el negocio, lo entiendan y las consulten.
+                Ayudo a empresas industriales y de servicios a construir y mejorar su presencia digital (LinkedIn, web e Instagram) para que sus posibles clientes las encuentren, entiendan qué hacen y las consulten.
             </p>
             <div class="animate-up delay-3">
-                <a href="evaluacion.html" class="btn">Evaluación inicial gratuita</a>
-                <a href="#clientes" class="btn btn-outline">Ver el caso real</a>
+                <a href="evaluacion.html" class="btn">Pedir evaluación gratuita</a>
+                <a href="#clientes" class="btn btn-outline">Ver un caso real</a>
             </div>
         </div>
     </section>
@@ -516,26 +521,27 @@
         <div class="container">
             <div class="services-header">
                 <div class="section-label">Servicios</div>
-                <h2 class="section-title">Tres etapas, según lo que <em>tu empresa necesite.</em></h2>
-                <p class="section-intro">No todas las empresas necesitan todo. A algunas les falta una web; a otras, un LinkedIn que hable por ellas. El diagnóstico define qué priorizar y qué puede esperar.</p>
+                <h2 class="section-title">No todas las empresas <em>necesitan lo mismo.</em></h2>
+                <p class="section-intro">A algunas les falta una web. A otras, un LinkedIn que hable por ellas. Por eso cada trabajo empieza con un diagnóstico: para ofrecerte exactamente lo que tu negocio necesita.</p>
             </div>
             <div class="services-grid">
-<article class="service-card featured"><span class="service-badge">Punto de partida</span><div class="service-icon">01</div><h3>Diagnóstico de presencia digital</h3><p class="service-for">Para saber qué mejorar, por qué y en qué orden.</p><ul class="service-list"><li>Revisión de LinkedIn, web e Instagram</li><li>Cómo te contactan hoy y si es fácil hacerlo</li><li>Comparación con empresas de tu rubro</li><li>Informe de prioridades y reunión de devolución</li></ul><div class="service-result">Un plan claro, útil aunque lo ejecute tu propio equipo.</div></article>
-<article class="service-card"><div class="service-icon">02</div><h3>Implementación</h3><p class="service-for">Para que esas mejoras se hagan, con entregables definidos.</p><ul class="service-list"><li>LinkedIn de la empresa y de sus referentes</li><li>Instagram ordenado y alineado al negocio</li><li>Web o landing, según lo que tu empresa necesite</li></ul><div class="service-result">Canales que explican qué hacés, para quién y cómo contactarte.</div></article>
-<article class="service-card"><div class="service-icon">03</div><h3>Acompañamiento mensual</h3><p class="service-for">Para sostener, evaluar y ajustar lo implementado.</p><ul class="service-list"><li>Planificación y contenido mensual</li><li>Revisión de resultados y ajustes</li><li>Seguimiento con tu equipo</li></ul><div class="service-result">Una presencia constante, con un propósito para cada publicación.</div></article>
+<article class="service-card featured"><span class="service-badge">Punto de partida</span><div class="service-icon">01</div><!-- PRECIO: completar antes de publicar --><h3>Diagnóstico de presencia digital</h3><p class="service-for">Analizo la situación actual de tu empresa y defino qué conviene mejorar primero.</p><ul class="service-list"><li>Reviso las cuentas y perfiles actuales de tu empresa</li><li>Analizo el recorrido del cliente: cómo llega hasta contactarte</li><li>Analizo a la competencia de tu rubro</li><li>Entrego un informe de prioridades y lo revisamos en una reunión</li></ul><div class="service-result">Un plan claro, listo para implementarlo juntos.</div><div class="service-price"><span class="service-price-from">Desde</span><span class="service-price-num">$ PRECIO</span><span class="service-price-note">Pago único · entrega en 7 a 10 días hábiles</span></div></article>
+<article class="service-card"><div class="service-icon">02</div><!-- PRECIO: completar antes de publicar --><h3>Implementación</h3><p class="service-for">Llevamos a la práctica las mejoras definidas en el diagnóstico.</p><ul class="service-list"><li>Creación u optimización de los canales priorizados en el diagnóstico</li><li>Textos que explican con claridad qué hace tu empresa y para quién</li><li>Contenidos base para cada canal</li></ul><div class="service-result">Canales que comunican con claridad qué hace tu empresa y cómo contactarla.</div><div class="service-price"><span class="service-price-from">Desde</span><span class="service-price-num">$ PRECIO</span><span class="service-price-note">Según los canales que trabajemos</span></div></article>
+<article class="service-card"><div class="service-icon">03</div><!-- PRECIO: completar antes de publicar --><h3>Acompañamiento mensual</h3><p class="service-for">Sostenemos tu presencia digital y la ajustamos según los resultados.</p><ul class="service-list"><li>Planificación mensual de contenido</li><li>Seguimiento de las consultas recibidas y ajustes de estrategia</li><li>Reunión mensual de seguimiento</li></ul><div class="service-result">Presencia constante, donde cada publicación tiene un objetivo.</div><div class="service-price"><div class="service-price-row"><span class="service-price-from">Estratégico · tu equipo ejecuta</span><span class="service-price-num">$ PRECIO <small>/mes</small></span></div><div class="service-price-row"><span class="service-price-from">Con ejecución · producimos el contenido</span><span class="service-price-num">$ PRECIO <small>/mes</small></span></div><span class="service-price-note">Contratación mínima de 3 meses · disponible después del diagnóstico</span></div></article>
 </div>
+            <p class="services-price-note">Precios en pesos argentinos. La web, cuando hace falta, se cotiza aparte con el desarrollador. Meta Ads se cotiza por separado.</p>
             <div class="entry-points">
                 <div class="entry-point">
                     <strong>¿Ya tenés LinkedIn, web o Instagram?</strong>
-                    <p>Revisamos qué está funcionando y qué no.</p>
+                    <p>Analizamos qué está funcionando y qué conviene mejorar.</p>
                 </div>
                 <div class="entry-point">
-                    <strong>¿Todavía no tenés presencia digital?</strong>
-                    <p>Definimos por dónde empezar según tu negocio y tus recursos.</p>
+                    <strong>¿Tu empresa todavía no tiene presencia digital?</strong>
+                    <p>Definimos por dónde empezar, según tu negocio y tus recursos.</p>
                 </div>
             </div>
             <div class="services-footer">
-                <p>¿No sabés por dónde empezar? Pedí una evaluación inicial gratuita: reviso qué encuentra hoy un posible cliente cuando busca tu empresa.</p>
+                <p>¿No sabés por dónde empezar? Pedí la evaluación gratuita: reviso tu empresa desde la mirada de un posible cliente y te envío las primeras observaciones.</p>
                 <a href="evaluacion.html" class="btn">Pedir evaluación gratuita</a>
             </div>
         </div>
@@ -554,15 +560,15 @@
             <div class="proof-header">
                 <div class="section-label">Un caso real</div>
                 <h2 class="section-title">Cuando se entiende qué hacés, <em>te consultan.</em></h2>
-                <p class="section-intro">Un proyecto que muestra cómo una presencia digital ordenada se traduce en consultas comerciales reales.</p>
+                <p class="section-intro">Una empresa con mucho valor que su presencia digital no lograba transmitir. Así lo trabajamos y estos fueron los resultados.</p>
             </div>
             <div class="proof-grid">
 
                 <div class="proof-card wide">
                     <h3>Empresa de soluciones industriales para oil &amp; gas</h3>
-                    <div class="proof-sector">Río Negro · Proyecto realizado · Datos históricos: abril–agosto de 2026</div>
+                    <div class="proof-sector">Río Negro · Abril–agosto de 2026</div>
                     <p class="proof-lead">
-                        <strong>El punto de partida.</strong> Tenían productos, servicios especializados y años de experiencia, pero su presencia digital no explicaba con claridad la amplitud de lo que ofrecían ni para qué servían sus soluciones.</p><p class="proof-lead"><strong>Qué hicimos.</strong> Empezamos por entender el negocio y ordenar el mensaje: qué ofrecen, para quién y por qué elegirlos. Con eso trabajamos sus canales —Instagram, LinkedIn y web— y sumamos campañas de Meta Ads para llegar más allá de su red habitual de contactos.
+                        <strong>El punto de partida.</strong> Tenían productos, servicios especializados y años de trayectoria. Pero quien visitaba sus redes o su web no llegaba a comprender todo lo que ofrecían ni para qué servían sus soluciones.</p><p class="proof-lead"><strong>Qué hicimos.</strong> Primero entendimos el negocio y ordenamos el mensaje. Después trabajamos su Instagram, LinkedIn y web, y sumamos campañas de Meta Ads para llegar a nuevos clientes, más allá de su red de contactos.
                     </p>
                     <div class="proof-stats">
                         <div class="proof-stat">
@@ -583,48 +589,16 @@
                         </div>
                     </div>
                     <div class="proof-result">
-                        34 conversaciones iniciadas durante el período reportado. Los clics y las conversaciones son indicadores distintos; no equivalen a ventas.
+                        34 conversaciones comerciales iniciadas en cinco meses, a partir de una presencia digital clara y campañas dirigidas.
                     </div>
-                    <p class="proof-note">Cifras históricas del caso publicado. Nombre del cliente reservado por confidencialidad. Podemos ampliar el caso completo en una reunión.</p>
+                    <p class="proof-note">El nombre de la empresa queda reservado. Podemos ampliar el caso en una reunión.</p>
                 </div>
 
                 <div class="proof-cta">
-                    <p>Si tu empresa tiene valor pero necesita comunicarlo de una manera más clara, hablemos.</p>
+                    <p>¿Querés saber cómo ve hoy un posible cliente a tu empresa? Empezá con una evaluación gratuita.</p>
                     <a href="evaluacion.html" class="btn">Pedir evaluación gratuita</a>
                 </div>
 
-            </div>
-        </div>
-    </section>
-
-    <section class="process" id="proceso">
-        <div class="container">
-            <div class="process-header">
-                <div class="section-label">Cómo trabajo</div>
-                <h2 class="section-title">Cuatro pasos, en este orden.</h2>
-                <p class="section-intro">Primero entendemos tu negocio y lo que hoy encuentra un posible cliente. Recién después decidimos qué cambiar.</p>
-            </div>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">01</div>
-                    <h3>Entender</h3>
-                    <p>Qué vende tu empresa, a quién, cómo le llegan hoy los clientes y qué encuentran cuando la buscan.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">02</div>
-                    <h3>Priorizar</h3>
-                    <p>Definimos qué mejorar, qué construir y en qué orden: qué canal va primero y qué puede esperar.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">03</div>
-                    <h3>Implementar</h3>
-                    <p>Ordenamos LinkedIn, web e Instagram para que expliquen qué hacés, para quién y cómo contactarte.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">04</div>
-                    <h3>Medir y ajustar</h3>
-                    <p>Miramos consultas y conversaciones, no likes. Lo que no funciona, se ajusta.</p>
-                </div>
             </div>
         </div>
     </section>
@@ -639,35 +613,33 @@
                     <div class="section-label">Sobre mí</div>
                     <h2 class="section-title">Sé cómo se busca y se decide <em>a quién contactar.</em></h2>
                     <p>
-                        Soy Amanda, fundadora de <strong>Amandarina Agency</strong>.
+                        Soy Amanda Quintero, fundadora de <strong>Amandarina Agency</strong>.
                     </p>
                     <p>
-                        Durante más de cinco años trabajé en recruiting técnico y adquisición de talento para empresas de tecnología. Esa experiencia me enseñó cómo las personas investigan, comparan y toman decisiones, y cuánto influye la forma en que una empresa comunica su valor.                    </p>
+                        Trabajé más de cinco años en recruiting técnico para empresas de tecnología, usando LinkedIn como herramienta diaria. Mi trabajo era comparar perfiles y decidir a quién contactar, y ahí aprendí algo simple: el perfil más claro, detallado y concreto es el que tiene más chances de ser elegido. Además, desde mi perfil personal difundía la marca empleadora de las empresas para las que reclutaba.                    </p>
                     <p>
-                        Hoy aplico esa mirada al marketing y la comunicación: primero entiendo el negocio, después traduzco productos, servicios y conocimiento técnico en mensajes claros para el público correcto.                    </p>
+                        Hoy aplico ese mismo criterio a las empresas: cuando un posible cliente compara opciones, avanza con la que entiende mejor.                    </p>
                     <p>
-                        Trabajo desde Cipolletti, Río Negro, con empresas de la región: negocios sólidos, con trayectoria y clientes fieles, cuya comunicación todavía no está a la altura de lo que hacen.
-                    </p>
-                    <p>
-                        En Amandarina combinamos estrategia y ejecución: revisamos cómo se presenta la empresa en LinkedIn, en su web y en Instagram, definimos qué priorizar y lo llevamos a la práctica para acompañar sus objetivos comerciales.                    </p>                </div>
+                        Trabajo desde Cipolletti, Río Negro, con empresas de la región: negocios con trayectoria y clientes fieles, cuya presencia digital todavía no refleja todo lo que hacen.
+                    </p>                </div>
             </div>
         </div>
     </section>
 
 <section class="faq" id="preguntas"><div class="container"><h2 class="section-title">Preguntas frecuentes</h2>
-<details><summary>¿Trabajás solo con empresas industriales?</summary><p>El foco está en empresas B2B, especialmente industriales y técnicas. Con la evaluación inicial gratuita vemos qué necesita tu empresa y si puedo ayudarte.</p></details>
-<details><summary>¿Qué es la evaluación inicial gratuita?</summary><p>Completás un formulario breve, reviso qué encuentra hoy un posible cliente cuando busca tu empresa y te envío las primeras observaciones. Si querés ir más a fondo, el siguiente paso es el Diagnóstico de presencia digital.</p></details>
-<details><summary>¿Podemos trabajar a distancia?</summary><p>Sí. Trabajo desde Cipolletti, Río Negro, con empresas de todo el país. La coordinación y revisión de materiales pueden hacerse de forma remota.</p></details>
-<details><summary>¿Qué necesita aportar mi empresa?</summary><p>Información sobre sus productos y servicios, objetivos y una persona de contacto para validar el contenido técnico. Definimos juntos qué materiales hacen falta.</p></details>
-<details><summary>¿Hacen campañas de Meta Ads?</summary><p>Sí, como complemento cuando el diagnóstico muestra que conviene ampliar el alcance. Se cotizan aparte y la inversión publicitaria se detalla por separado.</p></details>
-<details><summary>¿Cómo se define el presupuesto?</summary><p>Según los objetivos y el alcance del trabajo. La propuesta detalla entregables, honorarios y, cuando corresponda, la inversión publicitaria por separado.</p></details>
+<details><summary>¿Trabajás solo con empresas industriales?</summary><p>Mi foco son las empresas que le venden a otras empresas, sobre todo industriales y técnicas. Si tenés dudas, la evaluación gratuita es una buena forma de confirmarlo.</p></details>
+<details><summary>¿Qué es la evaluación inicial gratuita?</summary><p>Completás un formulario breve, reviso tu empresa desde la mirada de un posible cliente y en 3 días hábiles te envío las primeras observaciones. Si querés profundizar, el siguiente paso es el diagnóstico.</p></details>
+<details><summary>¿Podemos trabajar a distancia?</summary><p>Sí. Trabajo desde Cipolletti, Río Negro, con empresas de todo el país. Las reuniones y revisiones se realizan por videollamada.</p></details>
+<details><summary>¿Qué necesita aportar mi empresa?</summary><p>Información sobre sus productos y servicios, sus clientes y sus objetivos, y una persona que pueda validar el contenido técnico.</p></details>
+<details><summary>¿Hacés campañas de Meta Ads?</summary><p>Sí, cuando el diagnóstico muestra que conviene ampliar el alcance. Se cotizan aparte, y lo que se invierte en publicidad se detalla por separado.</p></details>
+<details><summary>¿Cómo se define el presupuesto?</summary><p>Depende de lo que necesite tu empresa. La propuesta detalla qué incluye, su costo y, si corresponde, la inversión publicitaria.</p></details>
 </div></section>
     <section class="contact" id="contacto">
         <div class="container">
             <div class="contact-inner">
                 <div class="section-label">Contacto</div>
-                <h2 class="section-title">¿Tu empresa se entiende cuando <em>alguien la busca?</em></h2>
-                <p>Pedí tu evaluación inicial gratuita: reviso qué encuentra hoy un posible cliente y te envío las primeras observaciones.</p>
+                <h2 class="section-title">Ordenemos la presencia digital <em>de tu empresa.</em></h2>
+                <p>Pedí la evaluación inicial gratuita. Reviso tu presencia actual, te envío las primeras observaciones en 3 días hábiles y, a partir de ahí, definimos cómo conviene avanzar.</p>
                 <a href="evaluacion.html" class="btn">Pedir evaluación gratuita</a>
                 <div class="contact-methods mt-3">
                     <div class="contact-method">
@@ -694,7 +666,6 @@
             <li><a href="#sobre-mi">Sobre mí</a></li>
             <li><a href="#servicios">Servicios</a></li>
             <li><a href="#clientes">Resultados</a></li>
-            <li><a href="#proceso">Proceso</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
         <p>© 2026 Amandarina Agency · Presencia digital para empresas B2B 🍊</p>
