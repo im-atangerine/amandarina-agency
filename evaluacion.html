@@ -2,6 +2,14 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MLN0MWQ8W8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MLN0MWQ8W8');
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evaluación inicial gratuita — Amandarina Agency</title>
     <meta name="description" content="Evaluación inicial gratuita: reviso qué encuentra hoy un posible cliente cuando busca tu empresa y te envío las primeras observaciones.">
@@ -230,5 +238,25 @@
         var v = function () { if (typeof Tally !== "undefined") { Tally.loadEmbeds(); } else { d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (e) { e.src = e.dataset.tallySrc; }); } };
         if (typeof Tally !== "undefined") { v(); } else if (d.querySelector('script[src="' + w + '"]') == null) { var s = d.createElement("script"); s.src = w; s.onload = v; s.onerror = v; d.body.appendChild(s); }
     </script>
+<script>
+/* Eventos de Google Analytics: clics en evaluación y WhatsApp */
+document.addEventListener('click', function (e) {
+    var a = e.target.closest('a');
+    if (!a || typeof gtag !== 'function') return;
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf('evaluacion') !== -1 || href === '#formulario') {
+        gtag('event', 'clic_evaluacion', { ubicacion: a.closest('section, nav, footer') ? (a.closest('section, nav, footer').id || a.closest('section, nav, footer').className) : 'otro' });
+    } else if (href.indexOf('wa.me') !== -1) {
+        gtag('event', 'clic_whatsapp', { ubicacion: a.classList.contains('wa-float') ? 'boton_flotante' : 'enlace' });
+    }
+});
+</script>
+<script>
+/* Evento de Google Analytics: formulario de Tally enviado */
+window.addEventListener('message', function (e) {
+    if (typeof e.data !== 'string' || e.data.indexOf('Tally.FormSubmitted') === -1) return;
+    if (typeof gtag === 'function') gtag('event', 'generate_lead', { formulario: 'evaluacion_inicial' });
+});
+</script>
 </body>
 </html>
